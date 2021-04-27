@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,900&display=swap');
-
+:root {
+    --primary: #327ACE;
+    --secondary: #AB3839;
+    --bodyBG: #1C3654;
+}
 ::selection {
     color:#f7f7f7;
-    background-color:#327ACE;
+    background-color:var(--primary);
 }
+
+
 * {
     margin:0;
     padding:0;
@@ -11,509 +17,243 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    color:#333;
-    font-weight: 300;
+    color:#f1f1f1;
     font-size:1rem;
+    background-color: var(--bodyBG);
     transition:ease 0.25s all;
+    box-sizing: border-box;
 }
 
 a {
-    color:#327ACE;
+    color:var(--primary);
 }
+
+h1 {
+    font-size:2rem;
+}
+
+h2 {
+    font-size:1.75rem;
+}
+
+h3 {
+    font-size:1.5rem;
+}
+
+h4 {
+    font-size:1.25rem;
+}
+
+h5 {
+    font-size:1rem;
+}
+
+
 
 header {
     box-shadow: 0px 2px 0px rgba(180, 180, 180, 0.25);
+    background-color: var(--secondary);
 }
 
 .header {
     max-width: 1280px;
     margin:auto;
-    height: 100%;
+    height: 60px;
+    position: relative;
     padding: 0rem 1rem;
 }
- 
-.hero-wrapper {
-    max-width: 1280px;
-    margin:auto;
-    height: 100%;
-    padding: 1rem 0rem;
+
+header + main {
     margin-top:3rem;
-    overflow: hidden;
 }
 
-.hero-image {
-    width: 100%;
-    margin-bottom: 2rem;
+.logo {
+    position: absolute;
+    max-width:210px ;
+    top:22px;
 }
+
+
+.hero {
+    background-image:url('../images/banner.jpg');
+    height: 465px;
+    padding:1rem;
+}
+
+.hero-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.hero-title {
+    margin-bottom:1rem;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .hero {
+        height: 505px;
+    }
+.hero-title {
+    text-align: left;
+        font-size: 2.5rem;
+
+}
+
+.hero {
+    padding:0rem;
+}
+}
+
+.hero-content {
+    margin-bottom:1rem;
+    font-size: 1.25rem;
+    max-width: 635px;
+    text-align: center;
+}
+
+
+.col-2 {
+    display: grid;
+    grid-column-gap: 3em;
+}
+    
+.col-3 {
+    display: grid;
+    grid-column-gap: 3em;
+}
+
+.col-4 {
+    display: grid;
+    grid-column-gap: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-column-gap: 3em;
+}
+    
+.col-3 {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-column-gap: 3em;
+}
+
+.col-4 {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-column-gap: 3em;
+}
+
+}
+
+
 .section-wrapper {
     max-width: 1280px;
     margin:auto;
     height: 100%;
-    margin-bottom: 3rem;
+    margin: 0rem auto 2rem;
     padding: 0rem 1rem;
 }
 
-  .hero {
-          background: linear-gradient(to right, #CE383233, #CE383244), url('../images/banner.png') no-repeat;
-        background-size: cover;
-        text-align: center;
-color:#000000;
-padding:1rem;
-    } 
-
-
-.hero h1 {
-    font-size:3rem;
-    margin-bottom:0.5rem
-}
-
-.hero p {
-    font-size:1.25rem;
-    font-weight: 600;
-    padding-left:1rem;
-    padding-right:1rem;
-    margin-bottom:0.5rem;
-}
-
-
-
 @media only screen and (min-width: 768px) {
-    .mobile-only {
-        display: none;
-    }
 
-    .hero-wrapper {
-        display: flex;
-        align-items: center;
-        margin-top:0rem;
-    }
-    
-    .hero {
-        height:580px;
-        background-size: cover;
-        text-align: left;
-
-    } 
-
-    .hero-content {
-        padding:1.75rem;
-        background-color:#f1f1f1;
-        width: 50%;
-        border-radius: 4px;
-    }
-
-    .hero h1 {
-        font-size:3rem;
-    }
-    
-    .hero p {
-        font-size:21px;
-        font-weight: 500;
-        padding-left:0rem;
-    padding-right:0rem;
-    }
-
-    .myth-banner {
-        margin-bottom: 3rem;
-    }
-
+    .section-wrapper {
+    max-width: 1280px;
+    margin:auto;
+    height: 100%;
+    margin: 2.5rem auto;
+    padding: 0rem 1rem;
+}
 }
 
- .main {
-     margin-top:2rem;
- }
+
+.card {
+    margin:2rem 0rem;
+}
 
 .page-title {
     font-size:32px;
     margin-bottom:1.5rem;
 }
 
-.main-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height:90px;
+.faq {
+    margin-bottom: 3rem;
+} 
+
+.question {
+    margin-bottom:0.5rem;
 }
 
-.main-nav ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+
+.form  {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    grid-column-gap: 3em;
+    margin-top:1rem;
 }
 
-.main-nav ul li { 
-    padding: 1rem;
+input {
+    padding:1rem;
+    width: 100%;
+    border-radius: 4px;
 }
 
-.main-nav__link {
-    color:#333333;
-    text-decoration: none;
-    transition:ease 0.75s text-shadow;
-}
-
-.main-nav__link:hover {
-    color:#3F3F3F;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-.hero-content {
-        padding:1.75rem;
-        background-color:#f1f1f1;
-        border-radius: 4px;
-    }
-
-.main-nav__link.active {
-    font-style: italic;
-}
-
-.logo {
-    height:60px;
-    padding:0.5rem;
+input[type="submit"] {
+    margin-top:0;
 }
 
 .btn {
     padding:0.75rem 1rem;
-    border-radius: 6px;
+    border-radius: 4px;
     margin-top:1rem;
     font-weight: 800;
     border:0;
     text-align: center;
 }
 
-.btn-block {
-    width: 100%;
-    display: block;
-}
-
 .btn-primary {
     color: #fff;
-    background: #327ACE;
-    transition: ease-out .15 background;
+    background: var(--primary);
+    transition: ease-out .25s background;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-    background: #327ACE;
+    background: var(--bodyBG);
 }
 
 
-.playerType-card {
-    margin-bottom:2rem;
-    font-weight: 300;
+.myth-banner {
+    margin: 2rem 0rem;
+    padding:1rem;
 
 }
 
-.playerType-card__image {
-    padding: 3rem;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    margin-bottom:0.75rem;
-    border-radius: 6px;
-}
-
-.playerType-card__image::before  {
-    border-radius: 6px;
-    position: absolute;
-    content: '';
-    background-color: rgba(0,0,0,0.5);
-    height: 100%;
-    width: 100%;
-    top:0;
-    left:0;
-}
-
-.playerType-card__image h3 {
-    font-style: normal;
-    font-weight: 800;
-    text-align: center;
-    color: #F1F1F1;
-    z-index: 1;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: relative;
-}
-
-.playerType-card p {
-    width: 75%;
-}
-
-.playerType-card__image.tennis {
-    background-image: url('../images/sports/tennis.jpg');
-}
-.playerType-card__image.five-a-side {
-    background-image: url('../images/sports/fiveaside.jpeg');
-}
-.playerType-card__image.pool {
-    background-image: url('../images/sports/pool.jpg');
-}
-.playerType-card__image.swim {
-    background-image: url('../images/sports/swim.jpg');
-}
-.playerType-card__image.running {
-    background-image: url('../images/sports/runners.png');
-}
-.playerType-card__image.fun {
-    background-image: url('../images/sports/justforfun.jpg');
-}
-.playerType-card__image.ice {
-    background-image: url('../images/sports/ice.jpg');
-}
-.playerType-card__image.win {
-    background-image: url('../images/sports/boxing.jpg');
-}
-
-
-
-
-.card-grid,
-    .card-grid-odd,
-    .col-3, .col-1, col-2, .col-4{
-        display: grid;
-
-        grid-template-columns: 1fr;
-        grid-gap: 2em;
-
-    }
-
-@media only screen and (min-width: 768px) {
-
-    
-    .card-grid {
-        display: grid;
-        grid-template-columns: 4fr 6fr;
-        grid-column-gap: 1em;
-    }
-    
-    .card-grid-odd {
-        display: grid;
-        grid-template-columns: 6fr 4fr;
-        grid-column-gap: 1em;
-    }
-
-    .col-2 {
-        display: grid;
-        grid-template-columns: 6fr 6fr;
-        grid-column-gap: 3em;
-    }
-        
-    .col-3 {
-        display: grid;
-        grid-template-columns: 3fr 3fr 3fr;
-        grid-column-gap: 3em;
-    }
-
-    .col-4 {
-        display: grid;
-        grid-template-columns: 3fr 3fr 3fr 3fr;
-        grid-column-gap: 3em;
-    }
-}
-
-.service-grid {
-    margin-top:2rem;
-}
-
-.card {
-    text-align: center;
-    display: flex;
+.myth-banner div {
+    display:flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid #BDBDBD;
-    box-sizing: border-box;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 6px;
-    padding:2rem;
-    height:400px;
-}
-
-.card img {
-    margin-top:2rem;
-    margin-bottom:2rem;
-    height:200px;
-}
-
-.alternative-wrapper {
-    box-sizing: border-box;
-    background-color:#26611D;
-    margin:3rem auto 3rem;
-    border-radius:6px;
-    padding:2rem;
+    justify-content: center;
     color:#fff;
+    margin-bottom:0;
+    padding:0;
 }
 
-.step {
-    display: flex;
-    align-items: center;
-    margin-bottom:2rem;
-}
-
-.step-number {
-    font-size:64px;
-    font-weight: bold;
-text-align: center;
-color: #327ACE;
-margin-right: 1rem;
-}
-
-.step-description h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom:0.5rem;
-}
-
-.step-description p {
-    font-size: 14px;
-}
-
-.faq {
-    margin-bottom: 3rem;
-}
-
-.question {
-    font-size:1.25rem;
-    box-shadow: 0px 2px 0px rgba(180, 180, 180, 0.25);
-    padding-bottom:1rem;
-    margin-bottom:1rem;
-}
-
-
-
-footer .section-wrapper{
-    background: rgba(242, 242, 242, 0.2);
-    padding:1rem;
-    margin: auto;
-    margin-bottom:2rem;
-    display:grid;
-        grid-template-columns: 1fr;
-        grid-column-gap: 3em;
-}
-
-@media only screen and (min-width: 768px) {
-    footer .section-wrapper{
-        
-        grid-template-columns: 3fr 3fr 6fr;
-        grid-column-gap: 3em;
-    
-    
+    .myth-banner div ul li {
+        list-style: none;
+        font-size:0.95rem;
+        text-align: center;
+        margin-right:1rem;
+        font-weight: 700;
+        display: inline-block;
     }
-}
-
-footer .section-wrapper ul {
-    list-style: none;
-    margin-bottom: 1rem;
-}
-
-footer .section-wrapper h5 {
-    margin-bottom:1rem;
-}
-
-.form-inline, .form-line-cta {
-    margin:3rem auto;
-    padding:1rem;
-
-}
-
-.form-inline input[type="email"], .form-inline-cta input[type="email"] {
-        appearance: none;
-        background: #FAF7F7;
-        box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
-        border-radius: 6px;
-        padding:1rem 1.5rem 1rem 1.5rem;
-        border: none;
-        box-sizing: border-box;
-        width: 100%;
-    }
-
-    .form-inline input[type="submit"], .form-inline-cta input[type="submit"] {
-        margin-top: 1rem;
-                width: 100%;
-
-    }
-    @media only screen and (min-width: 768px) {
-        .form-inline input[type="email"] {
-           
-            width: 322px;
-            margin-right: 1rem;
-
-        }
-
-        .myth-banner div ul li {
-                      display: inline-block;
-
-        }
-
-        .form-inline-cta input[type="email"] {
-           
-            width: 722px;
-            margin-right: 1rem;
-
-        }
-
-        .form-inline input[type="submit"], .form-inline-cta input[type="submit"]{
-            margin-top: 0rem;
-        }
-
-        .form-inline {
-            display: flex;
-            margin-top:3rem;
-            margin-bottom:0;
-        }
-
-         .form-inline-cta {
-            display: flex;
-            margin-top:1rem;
-
-        }
-
-        .form-inline, .form-line-cta {
-            padding:0rem;
-        
-        }
-    }
-
-
-    .form-cta {
-        background-color:#F2F2F2;
-        color:#333;
-        padding:1rem;
-    }
-
-    .form-cta h4 {
-        font-size:24px;
-        margin-bottom: 1rem;
-    }
-
-
-    .footer {
-        border-top: 1px solid rgba(242, 242, 242, 0.2);
-    }
-
-    footer h3 {
-        margin-bottom:1rem;
-    }
-
-
-    .myth-banner {
-        background-color: #CE3832;
-        margin-bottom: 1rem;
-        padding:1rem;
-
-    }
-
-    .myth-banner div {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        color:#fff;
-        margin-bottom:0;
-        padding:0;
-    }
-
-      .myth-banner div ul li {
-          list-style: none;
-          text-align: center;
-          margin-right:1rem;
-          font-weight: 700;
-      }
